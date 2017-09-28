@@ -79,8 +79,9 @@ class App(object):
     def remove_todo(self):
         rem_todo = self.read_todos()
         x = argv[2]
-        print(x)
-        del rem_todo[int(x)]
+        with open('data_file.txt', 'w') as list_of_tasks:
+            del rem_todo[int(x)]
+        return self.list_printer()
 
 my_screen = App()
 my_screen.run()
