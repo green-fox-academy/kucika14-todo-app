@@ -1,6 +1,9 @@
 from todo_app import StartScreen
 import unittest
 
+test_app = StartScreen()
+
 class TodoAppTest(object):
 
-    def 
+    def test_get_arguments(self):
+        self.assertEqual(test_app.get_arguments(),['Walk the dog', 'Buy milk', 'Do homework'])
