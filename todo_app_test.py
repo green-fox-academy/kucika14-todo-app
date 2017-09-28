@@ -1,4 +1,4 @@
-from todo_app import StartScreen
+from todo_app import Todo
 import unittest
 
 test_app = StartScreen()

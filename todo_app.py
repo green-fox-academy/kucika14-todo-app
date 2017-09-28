@@ -1,7 +1,7 @@
 from sys import argv
 
 
-class StartScreen(object):
+class App(object):
     def __init__(self):
         pass
 
@@ -16,8 +16,6 @@ class StartScreen(object):
         -r   Removes an task\n\
         -c   Completes an task'))
     
-    def run(self):
-        self.check_argument()
 
     def check_argument(self):
         arg = self.get_arguments()
@@ -28,16 +26,21 @@ class StartScreen(object):
         elif arg == '-a':
             self.add_todo()
             return argv[2]
-        elif arg == '-r':
+        elif arg == '-c':
             return arg
         elif arg == '-r':
-            return arg
+            self.remove_todo()
+            return argv[2]
 
 
     def get_arguments(self):
         if len(argv) >1:
             return argv[1]
         return None
+
+# class ToDo(object):
+#     def __init__(self):
+#         pass
 
     def read_todos(self):
         raw_list = []
@@ -47,6 +50,11 @@ class StartScreen(object):
         return raw_list
                 
 
+
+# # class ToDoController(object):
+#     def __init__(self):
+#         pass
+        
     def list_printer(self):
         raw_list = self.read_todos()
         print('\n')
@@ -55,14 +63,24 @@ class StartScreen(object):
         line_counter = 0
         for line in raw_list:
             line_counter += 1
-            print(str(line_counter)+ ' - '+ str(line))
+            print(str(line_counter)+ ' - '+  str(line))
 
     def add_todo(self):
         with open('data_file.txt', 'a') as list_of_tasks:
             list_of_tasks.write(argv[2]+ '\n')
         return self.list_printer()
-            
-         
+    
+    def run(self):
+        self.check_argument()
+    # def check_todo(self):
+    #     self.read_todos = checked_list
 
-my_screen = StartScreen()
+# DONT FORGET TO DO IT LATER!!!!
+    def remove_todo(self):
+        rem_todo = self.read_todos()
+        x = argv[2]
+        print(x)
+        del rem_todo[int(x)]
+
+my_screen = App()
 my_screen.run()

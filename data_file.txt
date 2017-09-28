@@ -1,7 +1,6 @@
-Walk the dog
-Buy milk
+0 Walk the dog
+1 Buy milk
 Do homework
 Feed the monkey
-kecske kolbász készítés
+kecske kolbï¿½sz kï¿½szï¿½tï¿½s
 kecske csekker
-lollo
