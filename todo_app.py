@@ -76,12 +76,12 @@ class App(object):
     #     self.read_todos = checked_list
 
 # DONT FORGET TO DO IT LATER!!!!
-    def remove_todo(self):
-        rem_todo = self.read_todos()
-        x = argv[2]
-        with open('data_file.txt', 'w') as list_of_tasks:
-            del rem_todo[int(x)]
-        return self.list_printer()
+    # def remove_todo(self):
+    #     rem_todo = self.read_todos()
+    #     x = argv[2]
+    #     del rem_todo[int(x)-1]
+    #     with open('data_file.txt', 'w') as new_list:
+    #     return rem_todo
 
 my_screen = App()
 my_screen.run()
